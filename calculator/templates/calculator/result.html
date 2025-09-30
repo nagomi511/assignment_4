@@ -1,0 +1,14 @@
+<h1>Django Calculator</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Calculate</button>
+</form>
+
+{% if result %}
+  <p><strong>Result:</strong> {{ result }}</p>
+{% elif error %}
+  <p style="color:red;"><strong>Error:</strong> {{ error }}</p>
+{% endif %}
+
+<p style="opacity:.6">Served by: {{ server }}</p>
